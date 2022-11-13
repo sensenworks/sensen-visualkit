@@ -312,7 +312,7 @@ export class Kit{
 }
 
 
-export default function VisualKit( element : HTMLElement | null ){
+export default function useVisualKit( element : HTMLElement | null ){
 
   return new SensenVisualKit( element )
 

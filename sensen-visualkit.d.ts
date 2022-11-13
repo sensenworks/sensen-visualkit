@@ -24,6 +24,7 @@ declare module 'sensen-visualkit/index' {
       constructor(element: HTMLElement | null);
       define(declaration: IStyleDeclaration): this;
       use(name?: string): this;
+      append(name?: string): this;
       sheet(sheet: Kit): this;
   }
   export class VisualKitDeclaration {
@@ -52,7 +53,7 @@ declare module 'sensen-visualkit/index' {
       declarations: VisualKitDeclaration;
       constructor(name: string, declarations?: IStyleDeclaration);
   }
-  export default function VisualKit(element: HTMLElement | null): SensenVisualKit;
+  export default function useVisualKit(element: HTMLElement | null): SensenVisualKit;
 
 }
 declare module 'sensen-visualkit/test' {

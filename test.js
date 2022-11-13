@@ -1,6 +1,6 @@
-import VisualKit, { Kit } from "./index";
+import useVisualKit, { Kit } from "./index";
 const element = document.querySelector('#sandbox');
-const visualKit = VisualKit(element).define({
+const visualKit = useVisualKit(element).define({
     backgroundColor: '#777',
     color: '#444',
     padding: '2rem',

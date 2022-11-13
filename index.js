@@ -155,6 +155,6 @@ export class Kit {
         this.declarations.define(declarations || {});
     }
 }
-export default function VisualKit(element) {
+export default function useVisualKit(element) {
     return new SensenVisualKit(element);
 }

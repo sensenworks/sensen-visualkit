@@ -1,12 +1,12 @@
 
-import VisualKit, { Kit } from "./index"
+import useVisualKit, { Kit } from "./index"
 
 const element = document.querySelector<HTMLElement>('#sandbox')
 
 // const title = document.querySelector<HTMLElement>('#sandbox h1')
 
 
-const visualKit = VisualKit( element ).define({
+const visualKit = useVisualKit( element ).define({
  
   backgroundColor:'#777',
  
