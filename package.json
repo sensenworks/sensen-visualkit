@@ -5,6 +5,7 @@
   "type": "module",
   "types": "sensen-visualkit.d.ts",
   "scripts": {
+    "debug": "tsc --watch",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",

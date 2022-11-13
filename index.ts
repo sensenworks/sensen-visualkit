@@ -126,12 +126,20 @@ export class SensenVisualKit{
 
       this.#canvas[ name ].innerHTML = ( `[visual-kit~="${ name }"] { ${ declarations.value.join(' ') } }` )
 
-      this.#reposiroty?.prepend( this.#canvas[ name ] );
-
       this.property.add( name ).link()
 
     }
     
+    this.#canvas[ name ].setAttribute('visualkit:canvas', `${ name }`)
+
+    return this.append( name );
+    
+  }
+  
+  append( name ?: string ){
+
+    this.#reposiroty?.append( this.#canvas[ name || this.name ] );
+
     return this;
     
   }

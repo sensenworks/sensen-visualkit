@@ -53,6 +53,10 @@ export class SensenVisualKit {
         __classPrivateFieldGet(this, _SensenVisualKit_instances, "m", _SensenVisualKit_mount).call(this, this.name, this.declarations);
         return this;
     }
+    append(name) {
+        __classPrivateFieldGet(this, _SensenVisualKit_reposiroty, "f")?.append(__classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name || this.name]);
+        return this;
+    }
     sheet(sheet) {
         __classPrivateFieldGet(this, _SensenVisualKit_instances, "m", _SensenVisualKit_mount).call(this, sheet.name, sheet.declarations);
         return this;
@@ -62,10 +66,10 @@ _SensenVisualKit_element = new WeakMap(), _SensenVisualKit_canvas = new WeakMap(
     __classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name] = __classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name] || document.createElement('style');
     if (__classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")) {
         __classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name].innerHTML = (`[visual-kit~="${name}"] { ${declarations.value.join(' ')} }`);
-        __classPrivateFieldGet(this, _SensenVisualKit_reposiroty, "f")?.prepend(__classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name]);
         this.property.add(name).link();
     }
-    return this;
+    __classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name].setAttribute('visualkit:canvas', `${name}`);
+    return this.append(name);
 };
 export class VisualKitDeclaration {
     constructor() {
