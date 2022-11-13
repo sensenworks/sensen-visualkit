@@ -2,3 +2,5 @@ index.html
 test.ts
 *.js.map
 *.html
+tsconfig.json
+vite.config.ts

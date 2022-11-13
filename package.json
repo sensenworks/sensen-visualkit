@@ -1,6 +1,6 @@
 {
   "name": "sensen-visualkit",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Dynamic CSS Style Manager",
   "type": "module",
   "types": "sensen-visualkit.d.ts",
@@ -22,5 +22,14 @@
   },
   "dependencies": {
     "sensen-metric-random": "^0.0.1"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sensenworks/sensen-visualkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sensenworks/sensen-visualkit/issues"
+  },
+  "homepage": "https://github.com/sensenworks/sensen-visualkit#readme"
 }
