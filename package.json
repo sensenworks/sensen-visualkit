@@ -1,6 +1,6 @@
 {
   "name": "sensen-visualkit",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Dynamic CSS Style Manager",
   "type": "module",
   "types": "sensen-visualkit.d.ts",

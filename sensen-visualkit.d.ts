@@ -41,6 +41,7 @@ declare module 'sensen-visualkit/index' {
       get payload(): string[];
       get value(): string;
       constructor(element: HTMLElement | null);
+      sync(): this;
       add(value: string): this;
       remove(value: string): this;
       replace(older: string, value: string): this;

@@ -126,7 +126,7 @@ export class SensenVisualKit{
 
       this.#canvas[ name ].innerHTML = ( `[visual-kit~="${ name }"] { ${ declarations.value.join(' ') } }` )
 
-      this.property.add( name ).link()
+      this.property.sync().add( name ).link()
 
     }
     
@@ -229,6 +229,18 @@ export class VisualKitProperty{
   constructor( element : HTMLElement | null ){
 
     this.#element = element;
+
+    this.sync()
+    
+  }
+
+  sync(){
+
+    (this.#element?.getAttribute(`${ this.codex }`)||'').split(' ')
+
+    .map( value => this.add(`${ value.trim() }`))
+
+    return this;
     
   }
 

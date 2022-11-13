@@ -66,7 +66,7 @@ _SensenVisualKit_element = new WeakMap(), _SensenVisualKit_canvas = new WeakMap(
     __classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name] = __classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name] || document.createElement('style');
     if (__classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")) {
         __classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name].innerHTML = (`[visual-kit~="${name}"] { ${declarations.value.join(' ')} }`);
-        this.property.add(name).link();
+        this.property.sync().add(name).link();
     }
     __classPrivateFieldGet(this, _SensenVisualKit_canvas, "f")[name].setAttribute('visualkit:canvas', `${name}`);
     return this.append(name);
@@ -109,10 +109,16 @@ export class VisualKitProperty {
         _VisualKitProperty_entries.set(this, []);
         _VisualKitProperty_element.set(this, null);
         __classPrivateFieldSet(this, _VisualKitProperty_element, element, "f");
+        this.sync();
     }
     get codex() { return 'visual-kit'; }
     get payload() { return __classPrivateFieldGet(this, _VisualKitProperty_entries, "f"); }
     get value() { return __classPrivateFieldGet(this, _VisualKitProperty_entries, "f").join(' '); }
+    sync() {
+        (__classPrivateFieldGet(this, _VisualKitProperty_element, "f")?.getAttribute(`${this.codex}`) || '').split(' ')
+            .map(value => this.add(`${value.trim()}`));
+        return this;
+    }
     add(value) {
         if (!this.contains(value)) {
             __classPrivateFieldGet(this, _VisualKitProperty_entries, "f").push(value);
